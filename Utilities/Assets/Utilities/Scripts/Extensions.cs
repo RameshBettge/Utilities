@@ -4,6 +4,13 @@
 
     public static class VectorExtensions
     {
+        public static Vector3 SetMagnitude(this Vector3 v, float newMagnitude)
+        {
+            v = v.normalized;
+            v *= newMagnitude;
+            return v;
+        }
+
         /// <summary>
         /// Returns the Vector with one of its values set to 0.
         /// </summary>
@@ -27,6 +34,13 @@
                     Debug.LogWarning("Invalid Argument given for Axis: " + ignoredAxis.ToString());
                     break;
             }
+            return v;
+        }
+
+        public static Vector2 SetMagnitude(this Vector2 v, float newMagnitude)
+        {
+            v = v.normalized;
+            v *= newMagnitude;
             return v;
         }
 

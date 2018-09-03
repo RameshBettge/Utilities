@@ -8,8 +8,9 @@ Overview:
 - Extensions: 
 
 	Vector3:
-		Vector3 = Vector3.Scale(Vector3 vectorToScaleWith)
+		Vector3 = Vector3.SetMagnitude(float newMagnitude)
 		Vector3 = Vector3.Planer(Axis ignoredAxis) 
+		Vector3 = Vector2.SetMagnitude(float newMagnitude)
 		Vector2 = Vector3.ToVector2(Axis ignoredAxis)
 
 	Transform:
