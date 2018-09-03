@@ -8,11 +8,12 @@ public class Tester : MonoBehaviour
 
     void Start()
     {
-        myVector = myVector.Planar(Axis.x);
-        Debug.Log(myVector);
+        //myVector = myVector.Planar(Axis.x);
+        //Debug.Log(myVector);
 
-        Debug.Log(myVector.ToVector2(Axis.z));
+        //Debug.Log(myVector.ToVector2(Axis.z));
 
-        transform.SetAxisPos(Axis.y, 8.5f);
+        //transform.SetAxisPos(Axis.x, 1.5f, false);
+        transform.SetAxisRot(Axis.y, 90f, false);
     }
 }

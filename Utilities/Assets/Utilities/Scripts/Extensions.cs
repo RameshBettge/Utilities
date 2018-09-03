@@ -72,9 +72,20 @@
         /// <param name="val">
         /// The value to which the axis is set
         /// </param>
-        public static void SetAxisPos(this Transform t, Axis axis, float val)
+        /// <param name="global">
+        /// If the changes should be applied in global space
+        /// </param>
+        public static void SetAxisPos(this Transform t, Axis axis, float val, bool global = true)
         {
-            Vector3 p = t.position;
+            Vector3 p;
+            if (global)
+            {
+                p = t.position;
+            }
+            else
+            {
+                p = t.localPosition;
+            }
 
             switch (axis)
             {
@@ -91,7 +102,66 @@
                     Debug.LogWarning("Invalid Argument given for Axis: " + axis.ToString());
                     break;
             }
-            t.position = p;
+
+            if (global)
+            {
+                t.position = p;
+            }
+            else
+            {
+                t.localPosition = p;
+            }
+        }
+
+        /// <summary>
+        /// Sets the Transforms position on one axis to a given value
+        /// </summary>
+        /// <param name="axis">
+        /// The axis which is used
+        /// </param>
+        /// <param name="val">
+        /// The value to which the axis is set
+        /// </param>
+        /// <param name="global">
+        /// If the changes should be applied in global space
+        /// </param>
+        public static void SetAxisRot(this Transform t, Axis axis, float val, bool global = true)
+        {
+            Vector3 r;
+
+            if (global)
+            {
+                r = t.eulerAngles;
+            }
+            else
+            {
+                r = t.localEulerAngles;
+            }
+
+            switch (axis)
+            {
+                case Axis.x:
+                    r.x = val;
+                    break;
+                case Axis.y:
+                    r.y = val;
+                    break;
+                case Axis.z:
+                    r.z = val;
+                    break;
+                default:
+                    break;
+            }
+
+            if (global)
+            {
+                t.eulerAngles = r;
+            }
+            else
+            {
+                t.localEulerAngles = r;
+            }
         }
     }
 }
+
