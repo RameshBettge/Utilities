@@ -15,5 +15,7 @@ public class Tester : MonoBehaviour
 
         //transform.SetAxisPos(Axis.x, 1.5f, false);
         transform.SetAxisRot(Axis.y, 90f, false);
+
+        Debug.Log( Tools.Map(7.5f, 5f, 10f, -10f, 30f));
     }
 }

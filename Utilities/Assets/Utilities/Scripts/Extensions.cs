@@ -6,6 +6,12 @@
     {
         public static Vector3 SetMagnitude(this Vector3 v, float newMagnitude)
         {
+            if (v.x == 0f && v.y == 0f && v.z == 0f)
+            {
+                Debug.LogWarning("Vector magnitude is 0 and cannot be scaled.");
+                return v;
+            }
+
             v = v.normalized;
             v *= newMagnitude;
             return v;
@@ -39,6 +45,12 @@
 
         public static Vector2 SetMagnitude(this Vector2 v, float newMagnitude)
         {
+            if(v.x == 0f && v.y == 0f)
+            {
+                Debug.LogWarning("Vector magnitude is 0 and cannot be scaled.");
+                return v;
+            }
+
             v = v.normalized;
             v *= newMagnitude;
             return v;

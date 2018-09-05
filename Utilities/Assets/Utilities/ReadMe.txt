@@ -5,6 +5,8 @@ Overview:
 - Enumerations:
 	Axis {x, y, z}
 
+	
+
 - Extensions: 
 
 	Vector3:
@@ -23,3 +25,10 @@ Overview:
 	abstract: Singleton<T> 
 		  	Inhering class needs to follow this syntax: 
 			public class NewSingleton : Singleton<NewSingleton>
+
+	Tools (helper class):
+		Map(float value, float oldMin, float oldMax, float newMin, float newMax)
+			-> Maps a value to an new Range
+		Map01(float value, float oldMin, float oldMax)
+			-> Maps a value between 0 and 1
+	
